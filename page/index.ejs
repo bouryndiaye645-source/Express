@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+<h2>Liste des tâches</h2>
+<a href="/ajout">Ajouter une tâche</a>
+
+<% taches.forEach(t => { %>
+<div class="card <%= t.statut.replace(' ', '-') %>">
+
+    <h3><%= t.titre %></h3>
+    <p><%= t.description %></p>
+    <p class="<%= t.priorite %>">Priorité : <%= t.priorite %></p>
+    <p>Statut : <%= t.statut %></p>
+    <p>Date limite : <%= t.dateLimite %></p>
+
+    <a href="/statut/<%= t.id %>">Changer statut</a>
+    <a href="/supprimer/<%= t.id %>">Supprimer</a>
+
+</div>
+<% }) %>
+
+</body>
+</html>
