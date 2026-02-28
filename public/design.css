@@ -1,0 +1,17 @@
+.carte {
+  border-left: 6px solid #3498db;
+}
+
+.carte.en-cours {
+  border-left-color: #f39c12;
+}
+
+.carte.termine {
+  border-left-color: #27ae60;
+  opacity: 0.85;
+}
+
+.carte.retard {
+  border-left-color: #e74c3c;
+  background: #fff8f8;
+}
