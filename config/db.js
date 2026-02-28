@@ -2,9 +2,9 @@ const mysql = require('mysql2');
 
 const db = mysql.createConnection({
   host: 'localhost',
-  user: 'root',        // change si besoin
-  password: 'root',        // ton mot de passe MySQL
-  database: 'projet_examen'  // le nom de ta base
+  user: 'root',        
+  password: 'root',        
+  database: 'projet_examen'  
 });
 // gestion de la connection a la base de donne
 

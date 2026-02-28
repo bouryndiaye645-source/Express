@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const db = require('../config/db');
 
-// Page principale - liste des tâches
+// Page principale liste des taches
 router.get('/', (req, res) => {
   const search = req.query.search || '';
   const statut = req.query.statut || '';
@@ -37,7 +37,7 @@ router.get('/ajout', (req, res) => {
   res.render('ajout');
 });
 
-// Enregistrer une tâche
+// Enregistrer une tache
 router.post('/ajout', (req, res) => {
   const { titre, description, priorite, date_limite, responsable } = req.body;
   const date_creation = new Date();
@@ -72,7 +72,7 @@ router.get('/statut/:id', (req, res) => {
   });
 });
 
-// Supprimer une tâche
+// Supprimer une tache
 router.get('/supprimer/:id', (req, res) => {
   db.query('DELETE FROM tache WHERE id = ?', [req.params.id], (err) => {
     if (err) throw err;
@@ -102,7 +102,7 @@ router.post('/modifier/:id', (req, res) => {
   );
 });
 
-// Dashboard
+// dashboard
 router.get('/dashboard', (req, res) => {
   db.query('SELECT * FROM tache', (err, taches) => {
     if (err) throw err;
